@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Zichun&#39;s Blog</title>
-    <link>https://zcsd.github.io/post/</link>
-    <description>Recent content in Posts on Zichun&#39;s Blog</description>
+    <title>Tag1 on Zichun&#39;s Blog</title>
+    <link>https://zcsd.github.io/tags/tag1/</link>
+    <description>Recent content in Tag1 on Zichun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Jun 2018 21:06:39 +0800</lastBuildDate>
     
-	<atom:link href="https://zcsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zcsd.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>https://zcsd.github.io/post/test3/</guid>
       <description>&lt;p&gt;I AM SUMMARY O.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Test2</title>
-      <link>https://zcsd.github.io/post/test2/</link>
-      <pubDate>Sat, 30 Jun 2018 21:04:26 +0800</pubDate>
-      
-      <guid>https://zcsd.github.io/post/test2/</guid>
-      <description>&lt;p&gt;I am summary. haha&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
