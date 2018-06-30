@@ -1,4 +1,4 @@
-# : zcsd.github.io
+# zcsd.github.io
 
 ## License
 
