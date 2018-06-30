@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Zichun&#39;s Blog</title>
     <link>https://zcsd.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Zichun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
@@ -62,8 +62,7 @@ Follow the following steps:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://zcsd.github.io/about/desc/</guid>
-      <description>Welcome to use hugo dream theme.
-View http://g1eny0ung.site/hugo-theme-dream for more details.</description>
+      <description>This is description.</description>
     </item>
     
   </channel>
