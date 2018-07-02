@@ -6,18 +6,35 @@
     <description>Recent content in Categories on ZC&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2014 - 2018 ZC&#39;s Blog. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 30 Jun 2018 20:57:44 +0800</lastBuildDate>
+    <copyright>Copyright © 2017 - 2018 ZC&#39;s Blog. All Rights Reserved.</copyright>
     
 	<atom:link href="https://zcsd.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Cat1</title>
-      <link>https://zcsd.github.io/categories/cat1/</link>
-      <pubDate>Sat, 30 Jun 2018 20:57:44 +0800</pubDate>
+      <title>Opencv</title>
+      <link>https://zcsd.github.io/categories/opencv/</link>
+      <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
       
-      <guid>https://zcsd.github.io/categories/cat1/</guid>
+      <guid>https://zcsd.github.io/categories/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ros</title>
+      <link>https://zcsd.github.io/categories/ros/</link>
+      <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/categories/ros/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rpi</title>
+      <link>https://zcsd.github.io/categories/rpi/</link>
+      <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/categories/rpi/</guid>
       <description></description>
     </item>
     

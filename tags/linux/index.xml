@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on ZC&#39;s Blog</title>
+    <link>https://zcsd.github.io/tags/linux/</link>
+    <description>Recent content in Linux on ZC&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2017 - 2018 ZC&#39;s Blog. All Rights Reserved.</copyright>
+    <lastBuildDate>Wed, 20 Dec 2017 23:15:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://zcsd.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install ROS and OpenCV in Raspberry Pi</title>
+      <link>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</link>
+      <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</guid>
+      <description>&lt;p&gt;This instruction covers the installation of &lt;strong&gt;ROS Kinetic&lt;/strong&gt; (Robot Operating System) and &lt;strong&gt;OpenCV-3.3.1&lt;/strong&gt; on the Raspberry Pi 2 or 3 with &lt;strong&gt;Raspbian Stretch&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
