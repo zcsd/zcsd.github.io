@@ -6,7 +6,6 @@
     <description>Recent content on ZC&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2017 - 2018 ZC&#39;s Blog. All Rights Reserved.</copyright>
     <lastBuildDate>Wed, 20 Dec 2017 23:15:50 +0800</lastBuildDate>
     
 	<atom:link href="https://zcsd.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -18,24 +17,33 @@
       <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
       
       <guid>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</guid>
-      <description>&lt;p&gt;This instruction covers the installation of &lt;strong&gt;ROS Kinetic&lt;/strong&gt; (Robot Operating System) and &lt;strong&gt;OpenCV-3.3.1&lt;/strong&gt; on the Raspberry Pi 2 or 3 with &lt;strong&gt;Raspbian Stretch&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>Introduction This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
+I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can download it here, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://zcsd.github.io/about/desc/</link>
+      <link>https://zcsd.github.io/404/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://zcsd.github.io/about/desc/</guid>
-      <description>ZC&amp;rsquo;s Blog
+      <guid>https://zcsd.github.io/404/</guid>
+      <description> Error 404: Page Not Found It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. 😟 If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zcsd.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zcsd.github.io/about/</guid>
+      <description>About Me 
+ZC’s Blog
 This blog is to record my tech sharing and interest.
 I am currently working on Computer Vision / Machine Vision / Robotics.
 Passionate about Software Engineering and Machine Learning / AI.
-Studied and work in Singapore, graduated from Nanyang Technological University.
+Studied and work in Singapore, graduated from Nanyang Technological University, Singapore.
 Come from a beautiful coastal city in ShanDong Province, China.
-- July 2018 Updated</description>
+-July 2018 Updated</description>
     </item>
     
   </channel>

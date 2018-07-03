@@ -1,69 +1,293 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ZC&#39;s Blog</title>
-
-  
-  
-  <meta name="author" content="zcsd" />
-  <meta name="description" content="This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
-
-" />
-
-
-
-<link href="/img/trees.png" rel="shortcut icon" type="image/x-icon" />
-
-
-
+<head><style>
+body {
+	display: block;
+	--colorBG: "#40e0d0, #ff8c00, #ff0080";background: linear-gradient(to right, var(--colorBG)) !important;
+	
+}
+</style><title>
+Install ROS and OpenCV in Raspberry Pi
+</title><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="ZC" />
+	<meta name="description" content="Introduction This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
+I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can download it here, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details." />
 <meta name="generator" content="Hugo 0.42.2" />
 
+<link rel="shortcut icon" href="/img/trees.png">
 
 <link rel="canonical" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" />
-<link rel="alternative" href="/index.xml" title="ZC&#39;s Blog" type="application/atom+xml" />
-
-<link href="https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="/css/site.css" />
-
-
+<link rel="alternative" href="/index.xml" title="ZC&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+<style>
+body.pushable {
+	display: block;background: linear-gradient(to right, var(--colorBG)) !important;
+	 ;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+<script>
+	var colorBG =  true 
+	var enabledPost = true
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
 </head>
 
-<body>
-  <div class="flip-container">
-    <div class="flipper">
-      <section class="front">
-        
-<nav class="ui top secondary menu">
-  <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
-  </div>
-  <div class="item">
-    <a href="/">
-      <i class="inverted big link home icon" title="Home"></i>
-    </a>
-  </div>
+<body><script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;var gradients = [
+	  [],
+	  ['#40e0d0', '#ff8c00', '#ff0080'], 
+	  ['#3e5151', '#decba4'], 
+	  ['#11998e', '#38ef7d'], 
+	  ['#108dc7', '#ef8e38'], 
+	  ['#fc5c7d', '#6a82fb'], 
+	  ['#fc466b', '#3f5efb'], 
+	  ['#c94b4b', '#4b134f'], 
+	  ['#23074d', '#cc5333'] 
+	]
+	document.body.style.setProperty('--colorBG', connect(gradients[getRandomInt(0, gradients.length)]))
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min)
+	  max = Math.floor(max)
+	  var random
+	  while (1) {
+	    random = Math.floor(Math.random() * (max - min)) + min
+	    if (random !== prevBgIndex) {
+	      prevBgIndex = random
+	      break
+	    }
+	  }
+	  return random
+	}
+
+	function connect(arr) {
+	  var str = ''
+	  for (var i = 0; i < arr.length; i++) {
+	    if (i !== arr.length - 1) {
+	      str += arr[i] + ', '
+	    } else {
+	      str += arr[i]
+	    }
+	  }
+	  return str
+	}
+</script><div id="sidebar" class="ui sidebar inverted vertical menu">
+	<section id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
+	<img src="/images/avatar.svg">
+</div>
+<h3 class="ui header">ZC
+	<div class="sub header">路漫漫其修远兮</div>
+</h3>
+</section><section class="ui attached center aligned inverted segment sidebar-dream-tags">
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
+
+<a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
+
+<a class="ui label" href="/tags/ros" title="ros">ros</a>
+
+<a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
+
+</section>	
+	
+	<section class="ui attached inverted segment sidebar-dream-categories both flexbox">
+		<div class="ui inverted accordion">
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/opencv">opencv</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/ros">ros</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/rpi">rpi</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+</div>
+	</section>
+	
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+<p>© 2018 ZC&#39;s Blog</p>
+    
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></section>
+</div>
+<div class="pusher">
+		<div class="flipper">
+			<div class="front">
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div><div class="item">
+		<a href="/">
+			<i class="inverted big link home icon" title="Home"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/post">
+			<i class="inverted big link archive icon" title="Archive"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/tags">
+			<i class="inverted big link tags icon" title="All Tags"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/categories">
+			<i class="inverted big link cubes icon" title="All Categories"></i>
+		</a>
+    </div>
+	<div class="ui container tablet computer only grid">
+		<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+			<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+		</div>
+	</div>
+	
 </nav>
- 
+
 <div class="ui centered grid">
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+	<div class="sixteen wide mobile only column"><div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">
+		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
+	<img src="/images/avatar.svg">
+</div>
+<h3 class="ui header">ZC
+	<div class="sub header">路漫漫其修远兮</div>
+</h3>
+</header>
+		<div class=" title header-title"><div id="tag-category-pop" class="ui red right corner label">		
+				<i class="hand point icon down"title="Click this to pop tags and categories"></i>		
+			</div></div>
+		<div id="tag-category" class=" content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
 
-    <section class="ui secondary top attached black segment">
-      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
-        <i class="save icon"></i>
-      </a>
-      <header>
-        <h1 class="ui header">
-          Install ROS and OpenCV in Raspberry Pi
-          <div class="sub header">@ zcsd · Dec 20, 2017 · 1 min read · Update at Jul 1, 2018</div>
-        </h1>
-      </header>
-      <article class="post-content" style="margin-top: 2rem; font-size: 1.4rem;"><p>This instruction covers the installation of <strong>ROS Kinetic</strong> (Robot Operating System) and <strong>OpenCV-3.3.1</strong> on the Raspberry Pi 2 or 3 with <strong>Raspbian Stretch</strong>.</p>
+<a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
 
-<p></p>
+<a class="ui label" href="/tags/ros" title="ros">ros</a>
+
+<a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
+
+</section><section class="ui attached inverted segment dream-categories both flexbox">
+			<div class="inverted accordion">
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/opencv">opencv</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/ros">ros</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/rpi">rpi</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+</div>
+			</section></div>
+		<footer class="ui bottom attached center aligned inverted segment">
+<p>© 2018 ZC&#39;s Blog</p>
+    
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
+	</div>
+</div></div>
+	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+		<section class="ui secondary top attached black segment post-head">
+			<h1 class="post-title">Install ROS and OpenCV in Raspberry Pi</h1>
+			<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>Dec 20, 2017</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="d37c85ec41f662f8c164dc1eca974515"></a></span></div>
+					<div><span><i class="clock outline icon"></i>3 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Jul 2, 2018</span></div>
+			</div>
+			<hr><div class="toc"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#step-1-install-pure-raspbian-os">Step 1:  Install pure Raspbian OS</a></li>
+<li><a href="#step-2-install-ros-kinetic">Step 2:  Install ROS Kinetic</a></li>
+<li><a href="#step-3-install-opencv">Step 3:  Install OpenCV</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
+</ul>
+</nav></div>
+			
+			
+			<article class="post-content twemoji">
+				
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.</p>
 
 <p>I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can <a href="https://drive.google.com/open?id=1KMP9R-Yg3GXGDGbAxtfe_mwYa9hFUwmh">download it here</a>, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details.</p>
 
@@ -81,209 +305,199 @@
 
 <h2 id="step-2-install-ros-kinetic">Step 2:  Install ROS Kinetic</h2>
 
-<p>Before we install ROS, its’s recommended that increase swap space size of Pi for faster compiling, but it is <strong>optional</strong>.</p></article>
-    </section>
+<p>Before we install ROS, its’s recommended that increase swap space size of Pi for faster compiling, but it is <strong>optional</strong>.</p>
 
-    <footer class="ui secondary attached segment dream-tags">
-      
-      
-      <a class="ui label" href="/tags/ros" title="ROS">ROS</a>
-      
-      <a class="ui label" href="/tags/opencv" title="OpenCV">OpenCV</a>
-      
-      <a class="ui label" href="/tags/rpi" title="RPi">RPi</a>
-      
-      <a class="ui label" href="/tags/linux" title="Linux">Linux</a>
-      
-      
-    </footer>
+<p><strong>Increase swap space size:</strong></p>
 
-    
-    <footer class="ui secondary attached segment">
-      Copyright © 2017 - 2018 ZC's Blog. All Rights Reserved.
-    </footer>
-    
+<p>Open “/etc/dphys–swapfile” using “sudo nano”, edit CONF_SWAPSIZE variable (change 100MB to 1024MB):</p>
 
-    
-    <footer class="ui secondary bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
-      <div id="disqus_thread"></div>
-      <script>
-      
+<pre><code># set size to absolute value, leaving empty (default) then uses computed value
+# you most likely don't want this, unless you have an special disk situation
+# CONF_SWAPSIZE=100
+CONF_SWAPSIZE=1024
+</code></pre>
 
-      
+<p>Now we need to activate new swap space:</p>
+
+<pre><code>$ sudo /etc/init.d/dphys-swapfile stop
+$ sudo /etc/init.d/dphys-swapfile start
+</code></pre>
+
+<blockquote>
+<p>Note: After installing ROS, swap space MUST be changed from 1024 to 100.</p>
+</blockquote>
+
+<p><strong>Add ROS repo to apt list:</strong></p>
+
+<p>In Raspbian Stretch,  there is an error for missing package, we need to fix it firstly by installing “dirmngr” for certificate management.</p>
+
+<pre><code>$ sudo apt-get install dirmngr
+</code></pre>
+
+<p>Then, we can add repo:</p>
+
+<pre><code>$ sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+</code></pre>
+
+<p><strong>Update Debian package:</strong></p>
+
+<pre><code>$ sudo apt-get update
+$ sudo apt-get upgrade
+</code></pre>
+
+<p><strong>Install Bootstrap Dependencies:</strong></p>
+
+<pre><code>$ sudo apt-get install python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
+</code></pre>
+
+<p><strong>Install rosdep (package manager):</strong></p>
+
+<pre><code>$ sudo rosdep init
+$ rosdep update
+</code></pre>
+
+<p><strong>Create a catkin Workspace:</strong></p>
+
+<pre><code>$ mkdir ~/ros_catkin_ws
+$ cd ~/ros_catkin_ws
+</code></pre>
+
+<p><strong>Build packages and libraries:</strong></p>
+
+<p>I chose to install ROS-Comm for minimal installation.</p>
+
+<blockquote>
+<p>ROS-Comm: ROS package, build, and communication libraries. No GUI tools.</p>
+</blockquote>
+
+<pre><code>$ rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar &gt; kinetic-ros_comm-wet.rosinstall
+$ wstool init -j8 src kinetic-ros_comm-wet.rosinstall
+</code></pre>
+
+<blockquote>
+<p>“-j8” is for faster processing.</p>
+</blockquote>
+
+<p>If “wstool init” fails or is interrupted, you can resume the download by running (this step may NOT be necessary):</p>
+
+<pre><code>$ wstool update -j4 -t src
+</code></pre>
+
+<p>Make sure all dependenices are installed:</p>
+
+<pre><code>$ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+</code></pre>
+
+<p><strong>Build ROS:</strong></p>
+
+<pre><code>$ sudo mkdir -p /opt/ros/kinetic
+$ sudo chown pi:pi /opt/ros/kinetic
+$ ./src/catkin/bin/catkin_make_isolated -j2 --install --install-space /opt/ros/kinetic -DCMAKE_BUILD_TYPE=Release
+</code></pre>
+
+<p>“-j2” is used because of limited memory of Pi, default parameter is “-j4”, “-j4” may cause error.</p>
+
+<p><strong>Source the new installation:</strong></p>
+
+<pre><code>$ source /opt/ros/kinetic/setup.bash
+</code></pre>
+
+<p>ROS environment variables could be checked by the following command:</p>
+
+<pre><code>$ export | grep ROS
+</code></pre>
+
+<p>Now ROS should be installed successfully, remember to change swap space back to 100MB.</p>
+
+<h2 id="step-3-install-opencv">Step 3:  Install OpenCV</h2>
+
+<p>OpenCV installation should be very easy now, there are many good online guide, I won’t repeat here, I recommend to use this <a href="https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/">OpenCV installation guide done by Adrian Rosebrock</a>.</p>
+
+<p>In the above <a href="https://drive.google.com/open?id=1KMP9R-Yg3GXGDGbAxtfe_mwYa9hFUwmh">ready-to-use img file</a>, it has installed OpenCV-3.3.1 with opencv_contrib (include SIFT, SURF  and other features), OpenCV is installed in global, NOT in virtual environment as in the Adrian guide, both python2 and python3 are able to use OpenCV.</p>
+
+<p>If you don’t know how to use OpenCV in ROS, just take a look at <a href="http://wiki.ros.org/cv_bridge">cv_bridge</a> in ROS wiki.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Now you should install ROS and OpenCV on your Raspberry Pi successfully, but this guide is not only for the specific version of Raspberry Pi and OpenCV.</p>
+
+			</article>
+		</section>
+		<section class="ui secondary attached segment dream-tags">
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
+
+<a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
+
+<a class="ui label" href="/tags/ros" title="ros">ros</a>
+
+<a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
 
 
-      var disqus_config = function () {
-      this.page.url = 'https:\/\/zcsd.github.io\/post\/install_ros_and_opencv_in_raspberry_pi\/';  
-      this.page.identifier = '\/post\/install_ros_and_opencv_in_raspberry_pi\/'; 
-      };
-
-      (function() { 
-      var d = document, s = d.createElement('script');
-      s.src = 'https://' + 'zcsd' + '.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </footer>
-    
-
-  </div>
-  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
-
-    <section class="ui top attached center aligned inverted segment">
-  <div class="ui small circular image">
-    
-    <img src="/img/avatar-ex.svg">
-    
-  </div>
-  <h3 class="ui header">ZC&#39;s Blog<div class="sub header" style="color: white;">路漫漫其修远兮</div>
-  </h3>
-
-  <div class="ui inverted horizontal list">
-    
-    <a class="item" href="/post">
-      <i class="archive icon" title="Archives"></i>
-    </a>
-    
-    <a class="item" href="/tags">
-      <i class="tags icon" title="All Tags"></i>
-    </a>
-    <a class="item" href="/categories">
-      <i class="inverted cubes icon" title="All Categories"></i>
-    </a>
-  </div>
-
-  <a id="tag-category-pop" class="ui red right corner label">
-    <i class="pointing down icon" title="Click this to pop tags and categories"></i>
-  </a>
+		</section><section class="ui secondary  attached segment share row box"><div class="author"><img class="avatar" src="https://zcsd.github.io/images/avatar.svg">
+	
+</div>
+<div class="info grow flexbox">
+	<p class="name">ZC</p>
+	<p class="desc">路漫漫其修远兮</p>		
+</div>
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Install ROS and OpenCV in Raspberry Pi  https:\/\/zcsd.github.io\/post\/install_ros_and_opencv_in_raspberry_pi\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
 </section>
-
-
-<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
-  
-  <a class="ui label" href="/tags/linux" title="linux">linux</a>
-  
-  <a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
-  
-  <a class="ui label" href="/tags/ros" title="ros">ros</a>
-  
-  <a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
-  
 </section>
+		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/zcsd.github.io\/post\/install_ros_and_opencv_in_raspberry_pi\/';
+		this.page.identifier = 'd37c85ec41f662f8c164dc1eca974515';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'zcsd' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-
-
-<section class="ui attached inverted segment dream-categories">
-  <div class="ui inverted accordion">
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/opencv" class="item" style="color: white;">opencv</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/ros" class="item" style="color: white;">ros</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/rpi" class="item" style="color: white;">rpi</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-
-<section class="ui bottom attached center aligned inverted segment">
-    
-    <p>© 2017 - 2018 ZC&#39;s Blog</p>
-    
-    <p>All Rights Reserved.</p>
-</section>
-
-
-  </div>
+</div>
+		
+	</div>
 </div>
 
-      </section>
-      <section class="back">
-        <nav class="ui top secondary menu" style="overflow-x: auto">
-  <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
-  </div>
-  
-  <div class="item">
-    <a href="mailto:zc.sd@outlook.com">
-      <i class="inverted big mail icon" title="email"></i>
-    </a>
-  </div>
-  
-  
-  <div class="item">
-    <a href="https://github.com/zcsd" target="_blank">
-      <i class="inverted big github icon" title="github"></i>
-    </a>
-  </div>
-  
-  
-  
-  
+			</div>
+			<div class="back"><nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div><div class="item">
+	<a href="https://github.com/zcsd" target="_blank">
+		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+	</a>
+</div>
+<div class="item">
+	<a href="mailto:zc.sd@outlook.com">
+		<i id="ico" class="inverted big link mail icon" title="Email"></i>
+	</a>
+</div>
+
 </nav>
-
 <div class="ui centered grid about">
-  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments"><div class="ui inverted segment">
+	<article class="twemoji"><h1>About Me</h1>
 
-    <section class="ui stacked segments">
-      <header class="ui inverted segment">
-        <h2 class="ui header">
-          About
-        </h2>
-      </header>
+<hr />
 
-      <article class="ui inverted segment back-about">
-        <div class="ui stackable three column grid">
-          <div class="column">
-              
-              <p><strong>ZC&rsquo;s Blog</strong></p>
+<p><br>
+<strong>ZC’s Blog</strong></p>
 
 <p>This blog is to record my tech sharing and interest.</p>
 
@@ -291,62 +505,43 @@
 
 <p>Passionate about Software Engineering and Machine Learning / AI.</p>
 
-<p>Studied and work in Singapore, graduated from Nanyang Technological University.</p>
+<p>Studied and work in Singapore, graduated from Nanyang Technological University, Singapore.</p>
 
 <p>Come from a beautiful coastal city in ShanDong Province, China.</p>
 
-<p><em>- July 2018 Updated</em></p>
-
-              
-          </div>
-          <div class="column">
-              
-          </div>
-          <div class="column">
-              
-          </div>
-        </div>
-      </article>
-
-      
-      <footer class="ui secondary segment">
-        Copyright © 2017 - 2018 ZC's Blog. All Rights Reserved.
-      </footer>
-      
-
-      
-      
-    </section>
-
-  </div>
+<p>-July 2018 Updated</p>
+</article>
 </div>
-
-      </section>
-    </div>
-  </div>
-
-  
-<script src="/js/jquery.min.js"></script>
-<script src="/js/semantic.min.js"></script>
-<script src="/js/html2canvas.min.js"></script>
-<script src="/js/bg.js"></script>
+</section>
+	</div>
+</div></div>
+		</div>
+	</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/site.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+<script src="/js/twemoji.min.js"></script>
 
 <script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-121674279-1', 'auto');
-	
-	ga('send', 'pageview');
-}
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-121674279-1', 'auto');
+ga('send', 'pageview');
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="dsq-count-scr" src="//zcsd.disqus.com/count.js" async></script>
 
+<script>
+	(function () {
+	  console.log("Twemoji up and making stuff colourful!");
+	  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+		twemoji.parse(b[a]);
+	  }
+	})();
+</script>
 
-
-</body>
+<script>
+		anchors.add('.post-content h1');
+		anchors.add('.post-content h2');
+		anchors.add('.post-content h3');
+</script></body>
 
 </html>

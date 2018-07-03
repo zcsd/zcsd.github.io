@@ -1,253 +1,326 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>
+<head><style>
+body {
+	display: block;
+	--colorBG: "#40e0d0, #ff8c00, #ff0080";background: linear-gradient(to right, var(--colorBG)) !important;
+	
+}
+</style><title>
 
-tag | opencv
+Tag | opencv
 
-</title>
-
-  
-  
-  <meta name="author" content="ZC" />
-  <meta name="description" content="" />
-
-
-
-<link href="/img/trees.png" rel="shortcut icon" type="image/x-icon" />
-
-
-
+</title><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="ZC" />
+	<meta name="description" content="Just a random blog for random stuff, mostly tech-related." />
 <meta name="generator" content="Hugo 0.42.2" />
 
+<link rel="shortcut icon" href="/img/trees.png">
 
 <link rel="canonical" href="https://zcsd.github.io/tags/opencv/" />
-<link rel="alternative" href="/index.xml" title="ZC&#39;s Blog" type="application/atom+xml" />
-
-<link href="https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="/css/site.css" />
-
-
+<link rel="alternative" href="/index.xml" title="ZC&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+<style>
+body.pushable {
+	display: block;background: linear-gradient(to right, var(--colorBG)) !important;
+	 ;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+<script>
+	var colorBG =  true 
+	var enabledPost = true
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
 </head>
 
-<body>
-  <div class="flip-container">
-    <div class="flipper">
-      <section class="front">
-        
+<body><script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;var gradients = [
+	  [],
+	  ['#40e0d0', '#ff8c00', '#ff0080'], 
+	  ['#3e5151', '#decba4'], 
+	  ['#11998e', '#38ef7d'], 
+	  ['#108dc7', '#ef8e38'], 
+	  ['#fc5c7d', '#6a82fb'], 
+	  ['#fc466b', '#3f5efb'], 
+	  ['#c94b4b', '#4b134f'], 
+	  ['#23074d', '#cc5333'] 
+	]
+	document.body.style.setProperty('--colorBG', connect(gradients[getRandomInt(0, gradients.length)]))
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min)
+	  max = Math.floor(max)
+	  var random
+	  while (1) {
+	    random = Math.floor(Math.random() * (max - min)) + min
+	    if (random !== prevBgIndex) {
+	      prevBgIndex = random
+	      break
+	    }
+	  }
+	  return random
+	}
 
-<nav class="ui top secondary menu" style="overflow-x: auto">
-  <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
-  </div>
-  <div class="item">
-    <a href="/"><i class="inverted big link home icon" title="Home"></i></a>
-  </div>
-  <div class="item">
-    
-    <i class="disabled inverted big arrow circle outline left icon" title="Previous page"></i>
-    
-  </div>
-  <div class="item">
-    
-    <i class="disabled inverted big arrow circle outline right icon" title="Next page"></i>
-    
-  </div>
-</nav>
- 
-<div class="ui centered grid">
-  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+	function connect(arr) {
+	  var str = ''
+	  for (var i = 0; i < arr.length; i++) {
+	    if (i !== arr.length - 1) {
+	      str += arr[i] + ', '
+	    } else {
+	      str += arr[i]
+	    }
+	  }
+	  return str
+	}
+</script><div id="sidebar" class="ui sidebar inverted vertical menu">
+	<section id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
+	<img src="/images/avatar.svg">
+</div>
+<h3 class="ui header">ZC
+	<div class="sub header">路漫漫其修远兮</div>
+</h3>
+</section><section class="ui attached center aligned inverted segment sidebar-dream-tags">
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
 
-    <section class="ui top attached center aligned inverted segment">
-  <div class="ui small circular image">
-    
-    <img src="/img/avatar-ex.svg">
-    
-  </div>
-  <h3 class="ui header">ZC&#39;s Blog<div class="sub header" style="color: white;">路漫漫其修远兮</div>
-  </h3>
+<a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
 
-  <div class="ui inverted horizontal list">
-    
-    <a class="item" href="/post">
-      <i class="archive icon" title="Archives"></i>
-    </a>
-    
-    <a class="item" href="/tags">
-      <i class="tags icon" title="All Tags"></i>
-    </a>
-    <a class="item" href="/categories">
-      <i class="inverted cubes icon" title="All Categories"></i>
-    </a>
-  </div>
+<a class="ui label" href="/tags/ros" title="ros">ros</a>
 
-  <a id="tag-category-pop" class="ui red right corner label">
-    <i class="pointing down icon" title="Click this to pop tags and categories"></i>
-  </a>
-</section>
+<a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
 
+</section>	
+	
+	<section class="ui attached inverted segment sidebar-dream-categories both flexbox">
+		<div class="ui inverted accordion">
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/opencv">opencv</a>
+</div>
+<div class="content">
 
-<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
-  
-  <a class="ui label" href="/tags/linux" title="linux">linux</a>
-  
-  <a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
-  
-  <a class="ui label" href="/tags/ros" title="ros">ros</a>
-  
-  <a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
-  
-</section>
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
 
-
-
-<section class="ui attached inverted segment dream-categories">
-  <div class="ui inverted accordion">
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/opencv" class="item" style="color: white;">opencv</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/ros" class="item" style="color: white;">ros</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <a href="/categories/rpi" class="item" style="color: white;">rpi</a>
-    </div>
-    <div class="content">
-      <div class="ui link inverted list">
-      
-      <div class="item" style="padding-left: 24px;">
-        <i class="cocktail icon"></i>
-        <div class="content">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" class="item">Install ROS and OpenCV in Raspberry Pi</a>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-
-<section class="ui bottom attached center aligned inverted segment">
-    
-    <p>© 2017 - 2018 ZC&#39;s Blog</p>
-    
-    <p>All Rights Reserved.</p>
-</section>
-
-
-  </div>
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-
-    <div class="ui two stackable cards">
-      
-      
-
-        <article class="black card">
-  <div class="image">
-    <div class="ui dimmer">
-      <div class="content">
-        <div class="center">
-          <a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
-            <h2 class="ui header" style="color: white;">Install ROS and OpenCV in Raspberry Pi</h2>
-          </a>
-          <p style="padding: 5px;">This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
-
-</p>
-          <p>@ zcsd</p>
-          <div class="ui top right attached black label">1 min read</div>
-          <div class="ui bottom left attached black label">Dec 20, 2017</div>
-        </div>
-      </div>
-    </div>
-    
-    <img src="/img/cover1.jpeg" alt="Install ROS and OpenCV in Raspberry Pi">
-    
-  </div>
-</article>
-
-
-      
-    </div>
-
-  </div>
 </div>
 
-      </section>
-      <section class="back">
-        <nav class="ui top secondary menu" style="overflow-x: auto">
-  <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/ros">ros</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/rpi">rpi</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+</div>
+	</section>
+	
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+<p>© 2018 ZC&#39;s Blog</p>
+    
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></section>
+</div>
+<div class="pusher">
+		<div class="flipper">
+			<div class="front">
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div><div class="item">
+		<a href="/">
+			<i class="inverted big link home icon" title="Home"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/post">
+			<i class="inverted big link archive icon" title="Archive"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/tags">
+			<i class="inverted big link tags icon" title="All Tags"></i>
+		</a>
+	</div>
+	<div class="item">
+		<a href="/categories">
+			<i class="inverted big link cubes icon" title="All Categories"></i>
+		</a>
+    </div>
+	
+	<div class="item">
+		
+		<i class="disabled inverted big chevron circle left icon" title="Previous page"></i>
+  	
   </div>
-  
-  <div class="item">
-    <a href="mailto:zc.sd@outlook.com">
-      <i class="inverted big mail icon" title="email"></i>
-    </a>
-  </div>
-  
-  
-  <div class="item">
-    <a href="https://github.com/zcsd" target="_blank">
-      <i class="inverted big github icon" title="github"></i>
-    </a>
-  </div>
-  
-  
-  
-  
+	<div class="item">	
+		<i class="disabled inverted big chevron circle right icon" title="Next page"></i>
+		
+	</div>
+	
 </nav>
 
+<div class="ui centered grid">
+	<div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+		<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">
+		<header id="author" class="ui top attached center aligned inverted segment"><div class="ui small circular image">
+	<img src="/images/avatar.svg">
+</div>
+<h3 class="ui header">ZC
+	<div class="sub header">路漫漫其修远兮</div>
+</h3>
+</header>
+		<div class="active title header-title"><div id="tag-category-pop" class="ui red right corner label">		
+				<i class="hand point icon up"title="Click this to pop tags and categories"></i>		
+			</div></div>
+		<div id="tag-category" class="active content"><section class="ui attached center aligned inverted segment dream-tags none flexbox">
+<a class="ui label" href="/tags/linux" title="linux">linux</a>
+
+<a class="ui label" href="/tags/opencv" title="opencv">opencv</a>
+
+<a class="ui label" href="/tags/ros" title="ros">ros</a>
+
+<a class="ui label" href="/tags/rpi" title="rpi">rpi</a>
+
+</section><section class="ui attached inverted segment dream-categories both flexbox">
+			<div class="inverted accordion">
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/opencv">opencv</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/ros">ros</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/rpi">rpi</a>
+</div>
+<div class="content">
+
+	<a class="item" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Install ROS and OpenCV in Raspberry Pi</p>
+		</div>
+	</a>
+
+</div>
+
+</div>
+			</section></div>
+		<footer class="ui bottom attached center aligned inverted segment">
+<p>© 2018 ZC&#39;s Blog</p>
+    
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p></footer>
+	</div>
+</div>
+	</div>
+	<div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+		<div class="cards row box">
+			
+	<article class="blog-card none flexbox" style="background-image: url(https://zcsd.github.io/images/cover1.jpeg)">
+<img class="image" src="https://zcsd.github.io/images/cover1.jpeg"></img>
+<div class="title-content twemoji">
+	<h3><a class="title" href=https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/>Install ROS and OpenCV in Raspberry Pi</a></h3>
+	<div class="intro twemoji">Installation Guide for ROS Kinetic and OpenCV on the Raspberry Pi</div>
+</div>
+<div class="utility-info">
+	<ul class="utility-list">
+		
+		<div><i class="comment icon"></i><span class="disqus-comment-count" data-disqus-identifier="d37c85ec41f662f8c164dc1eca974515"></span></div>
+		
+		<div><span><i class="calendar icon"></i>Dec 20, 2017</span></div>
+		<div><span><i class="clock icon"></i>3 min read</span></div>
+	</ul>
+</div>
+<div class="color-overlay"></div>
+</article>
+
+	
+
+
+		</div>
+	</div>
+</div>
+
+			</div>
+			<div class="back"><nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div><div class="item">
+	<a href="https://github.com/zcsd" target="_blank">
+		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+	</a>
+</div>
+<div class="item">
+	<a href="mailto:zc.sd@outlook.com">
+		<i id="ico" class="inverted big link mail icon" title="Email"></i>
+	</a>
+</div>
+
+</nav>
 <div class="ui centered grid about">
-  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments"><div class="ui inverted segment">
+	<article class="twemoji"><h1>About Me</h1>
 
-    <section class="ui stacked segments">
-      <header class="ui inverted segment">
-        <h2 class="ui header">
-          About
-        </h2>
-      </header>
+<hr />
 
-      <article class="ui inverted segment back-about">
-        <div class="ui stackable three column grid">
-          <div class="column">
-              
-              <p><strong>ZC&rsquo;s Blog</strong></p>
+<p><br>
+<strong>ZC’s Blog</strong></p>
 
 <p>This blog is to record my tech sharing and interest.</p>
 
@@ -255,85 +328,37 @@ tag | opencv
 
 <p>Passionate about Software Engineering and Machine Learning / AI.</p>
 
-<p>Studied and work in Singapore, graduated from Nanyang Technological University.</p>
+<p>Studied and work in Singapore, graduated from Nanyang Technological University, Singapore.</p>
 
 <p>Come from a beautiful coastal city in ShanDong Province, China.</p>
 
-<p><em>- July 2018 Updated</em></p>
-
-              
-          </div>
-          <div class="column">
-              
-          </div>
-          <div class="column">
-              
-          </div>
-        </div>
-      </article>
-
-      
-      <footer class="ui secondary segment">
-        Copyright © 2017 - 2018 ZC's Blog. All Rights Reserved.
-      </footer>
-      
-
-      
-        
-        <footer class="ui secondary segment">
-          <div id="disqus_thread"></div>
-          <script>
-          
-
-          
-
-
-          var disqus_config = function () {
-          this.page.url = 'https:\/\/zcsd.github.io\/tags\/opencv\/about';  
-          this.page.identifier = '/about'; 
-          };
-
-          (function() { 
-          var d = document, s = d.createElement('script');
-          s.src = 'https://' + 'zcsd' + '.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </footer>
-        
-      
-    </section>
-
-  </div>
+<p>-July 2018 Updated</p>
+</article>
 </div>
-
-      </section>
-    </div>
-  </div>
-
-  
-<script src="/js/jquery.min.js"></script>
-<script src="/js/semantic.min.js"></script>
-<script src="/js/html2canvas.min.js"></script>
-<script src="/js/bg.js"></script>
+</section>
+	</div>
+</div></div>
+		</div>
+	</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/site.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script><script src="/js/twemoji.min.js"></script>
 
 <script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-121674279-1', 'auto');
-	
-	ga('send', 'pageview');
-}
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-121674279-1', 'auto');
+ga('send', 'pageview');
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="dsq-count-scr" src="//zcsd.disqus.com/count.js" async></script>
 
-
+<script>
+	(function () {
+	  console.log("Twemoji up and making stuff colourful!");
+	  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+		twemoji.parse(b[a]);
+	  }
+	})();
+</script>
 
 </body>
 
