@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ZC&#39;s Blog</title>
+    <title>Zichun&#39;s Blog</title>
     <link>https://zcsd.github.io/</link>
-    <description>Recent content on ZC&#39;s Blog</description>
+    <description>Recent content on Zichun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Dec 2017 23:15:50 +0800</lastBuildDate>
@@ -37,7 +37,7 @@ I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, 
       
       <guid>https://zcsd.github.io/about/</guid>
       <description>About Me 
-ZC’s Blog
+Zichun’s Blog
 This blog is to record my tech sharing and interest.
 I am currently working on Computer Vision / Machine Vision / Robotics.
 Passionate about Software Engineering and Machine Learning / AI.
