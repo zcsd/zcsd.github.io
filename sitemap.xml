@@ -27,13 +27,13 @@
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/opencv/</loc>
+    <loc>https://zcsd.github.io/categories/opencv/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/categories/opencv/</loc>
+    <loc>https://zcsd.github.io/tags/opencv/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -45,25 +45,25 @@
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/ros/</loc>
-    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://zcsd.github.io/categories/ros/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/rpi/</loc>
+    <loc>https://zcsd.github.io/tags/ros/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zcsd.github.io/categories/rpi/</loc>
+    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zcsd.github.io/tags/rpi/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
