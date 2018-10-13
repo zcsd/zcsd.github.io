@@ -6,10 +6,20 @@
     <description>Recent content on Zichun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Dec 2017 23:15:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Sep 2018 18:11:28 +0800</lastBuildDate>
     
 	<atom:link href="https://zcsd.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install CUDA9.0 cuDNN7.2 for Tensorflow-gpu in Ubuntu 18.04</title>
+      <link>https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/</link>
+      <pubDate>Wed, 26 Sep 2018 18:11:28 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/</guid>
+      <description>Introduction This tutorial will guide you how to install CUDA and cuDNN for tensorflow-gpu using in Ubuntu 18.04, there are some online tutorials which always made some errors when I follow them to do the setup, it may be caused by new Ubuntu OS version and other version conflict, so I prepared a detailed guide to help on this.
+Firstly, you should know your development envirnment clearly, here is my pc environment and library that will be used (on 26 Sep 2018):</description>
+    </item>
     
     <item>
       <title>Install ROS and OpenCV in Raspberry Pi</title>

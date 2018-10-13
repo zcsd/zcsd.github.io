@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Cuda</title>
+      <link>https://zcsd.github.io/categories/cuda/</link>
+      <pubDate>Wed, 26 Sep 2018 18:11:28 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/categories/cuda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Opencv</title>
       <link>https://zcsd.github.io/categories/opencv/</link>
       <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
@@ -34,6 +43,15 @@
       <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
       
       <guid>https://zcsd.github.io/categories/rpi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://zcsd.github.io/categories/tensorflow/</link>
+      <pubDate>Wed, 26 Sep 2018 18:11:28 +0800</pubDate>
+      
+      <guid>https://zcsd.github.io/categories/tensorflow/</guid>
       <description></description>
     </item>
     

@@ -8,18 +8,18 @@ body {
 	
 }
 </style><title>
-Install ROS and OpenCV in Raspberry Pi
+Install CUDA9.0 cuDNN7.2 for Tensorflow-gpu in Ubuntu 18.04
 </title><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Zichun" />
-	<meta name="description" content="Introduction This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
-I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can download it here, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details." />
+	<meta name="description" content="Introduction This tutorial will guide you how to install CUDA and cuDNN for tensorflow-gpu using in Ubuntu 18.04, there are some online tutorials which always made some errors when I follow them to do the setup, it may be caused by new Ubuntu OS version and other version conflict, so I prepared a detailed guide to help on this.
+Firstly, you should know your development envirnment clearly, here is my pc environment and library that will be used (on 26 Sep 2018):" />
 <meta name="generator" content="Hugo 0.49" />
 
 <link rel="shortcut icon" href="/img/trees.png">
 
-<link rel="canonical" href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/" />
+<link rel="canonical" href="https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/" />
 <link rel="alternative" href="/index.xml" title="Zichun&#39;s Blog" type="application/atom+xml"/><link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
 <style>
 body.pushable {
@@ -330,21 +330,23 @@ var bodyBgSwitchIndex = 0;var gradients = [
 </div></div>
 	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
 		<section class="ui secondary top attached black segment post-head">
-			<h1 class="post-title">Install ROS and OpenCV in Raspberry Pi</h1>
+			<h1 class="post-title">Install CUDA9.0 cuDNN7.2 for Tensorflow-gpu in Ubuntu 18.04</h1>
 			<div class="sub header">
-					<div><span><i class="calendar outline icon"></i>Dec 20, 2017</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="d37c85ec41f662f8c164dc1eca974515"></a></span></div>
-					<div><span><i class="clock outline icon"></i>4 min read</span></div>
-					<div><span><i class="angle double up icon"></i>Last updated on Jul 2, 2018</span></div>
+					<div><span><i class="calendar outline icon"></i>Sep 26, 2018</span></div><div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="ddcaf90328f33c226e871b31c2f682b0"></a></span></div>
+					<div><span><i class="clock outline icon"></i>3 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Sep 30, 2018</span></div>
 			</div>
 			<hr><div class="toc"><nav id="TableOfContents">
 <ul>
 <li>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#step-1-install-pure-raspbian-os">Step 1:  Install pure Raspbian OS</a></li>
-<li><a href="#step-2-install-ros-kinetic">Step 2:  Install ROS Kinetic</a></li>
-<li><a href="#step-3-install-opencv">Step 3:  Install OpenCV</a></li>
-<li><a href="#summary">Summary</a></li>
+<li><a href="#verify-hardware-and-software">Verify hardware and software</a></li>
+<li><a href="#intall-nvidia-gpu-driver">Intall NVIDIA GPU driver</a></li>
+<li><a href="#environment-setup">Environment Setup</a></li>
+<li><a href="#install-cuda">Install CUDA</a></li>
+<li><a href="#install-cudnn">Install cuDNN</a></li>
+<li><a href="#install-tensorflow-gpu">Install Tensorflow-gpu</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -355,140 +357,148 @@ var bodyBgSwitchIndex = 0;var gradients = [
 
 <h2 id="introduction">Introduction</h2>
 
-<p>This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.</p>
+<p>This tutorial will guide you how to install CUDA and cuDNN for tensorflow-gpu using in Ubuntu 18.04, there are some online tutorials which always made some errors when I follow them to do the setup, it may be caused by new Ubuntu OS version and other version conflict, so I prepared a detailed guide to help on this.</p>
 
-<p>I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can <a href="https://drive.google.com/open?id=1KMP9R-Yg3GXGDGbAxtfe_mwYa9hFUwmh">download it here</a>, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details.</p>
-
-<p>If you want to make your own installation, please see the following steps.</p>
-
-<h2 id="step-1-install-pure-raspbian-os">Step 1:  Install pure Raspbian OS</h2>
-
-<p>Download official image file “<a href="https://www.raspberrypi.org/downloads/raspbian/">RASPBIAN STRETCH WITH DESKTOP</a>” (Image with desktop based on Debian Stretch, Version: November 2017, Release date: 2017-11-29, Kernel version: 4.9).</p>
-
-<p>Unzip the file, burn the img file to a SD card (at least 16GB) using <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> for Windows or <a href="http://ivanx.com/raspberrypi/">Pi Filler</a> (easy use) for macOS.</p>
+<p>Firstly, you should know your development envirnment clearly, here is my pc environment and library that will be used (on 26 Sep 2018):</p>
 
 <blockquote>
-<p>Note: Choose “Enable SSH” option if Pi Filler is used.</p>
+<ul>
+<li>Ubuntu 18.04.1</li>
+<li>Python 3.6.6</li>
+<li>GCC 5 (default is 7.3 for Ubuntu 18.04.1)</li>
+<li>NVIDIA-driver-390</li>
+<li>CUDA 9.0.176</li>
+<li>cuDNN 7.2.1.38</li>
+<li>Tensorflow-gpu 1.10.1</li>
+</ul>
 </blockquote>
 
-<h2 id="step-2-install-ros-kinetic">Step 2:  Install ROS Kinetic</h2>
+<h2 id="verify-hardware-and-software">Verify hardware and software</h2>
 
-<p>Before we install ROS, its’s recommended that increase swap space size of Pi for faster compiling, but it is <strong>optional</strong>.</p>
+<p><strong>Verify your NVIDIA GPU CUDA enable</strong></p>
 
-<p><strong>Increase swap space size:</strong></p>
-
-<p>Open “/etc/dphys–swapfile” using “sudo nano”, edit CONF_SWAPSIZE variable (change 100MB to 1024MB):</p>
-
-<pre><code># set size to absolute value, leaving empty (default) then uses computed value
-# you most likely don't want this, unless you have an special disk situation
-# CONF_SWAPSIZE=100
-CONF_SWAPSIZE=1024
+<pre><code>lspci | grep -i nvidia
 </code></pre>
 
-<p>Now we need to activate new swap space:</p>
+<p>You shoud see the NVIDIA GPU information, for my case, I use GTX 1080Ti.</p>
 
-<pre><code>$ sudo /etc/init.d/dphys-swapfile stop
-$ sudo /etc/init.d/dphys-swapfile start
+<p><strong>Verify your current NVIDIA GPU driver version</strong></p>
+
+<pre><code>nvidia-smi
 </code></pre>
+
+<p>You shoud see something like &ldquo;nvidia-384&rdquo;, &ldquo;nvidia-390&rdquo;, &ldquo;nvidia-396&rdquo; &hellip;</p>
+
+<p><strong>Check gcc complier version</strong></p>
+
+<pre><code>gcc --version
+</code></pre>
+
+<p>Current default gcc version is 7.3 in Ubuntu 18.04.1, we need to downgrade gcc version for later CUDA installation.</p>
+
+<h2 id="intall-nvidia-gpu-driver">Intall NVIDIA GPU driver</h2>
 
 <blockquote>
-<p>Note: After installing ROS, swap space MUST be changed from 1024 to 100.</p>
+<p>Note: For CUDA 9.0, it require at least nvidia-384 driver, so if your current driver version is equal to or newer than 384, you have no need to upgrade or reinstall the driver, can skip the following driver installation steps.</p>
 </blockquote>
 
-<p><strong>Add ROS repo to apt list:</strong></p>
-
-<p>In Raspbian Stretch,  there is an error for missing package, we need to fix it firstly by installing “dirmngr” for certificate management.</p>
-
-<pre><code>$ sudo apt-get install dirmngr
+<pre><code>sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install nvidia-384 nvidia-384-dev
 </code></pre>
 
-<p>Then, we can add repo:</p>
+<h2 id="environment-setup">Environment Setup</h2>
 
-<pre><code>$ sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
-$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+<p><strong>Install dependent library</strong></p>
+
+<pre><code>sudo apt install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 </code></pre>
 
-<p><strong>Update Debian package:</strong></p>
+<p><strong>Downgrade gcc version</strong></p>
 
-<pre><code>$ sudo apt-get update
-$ sudo apt-get upgrade
+<p>To install CUDA, gcc must not be newer than gcc 6.x, I choose to downgrade to gcc 5.x</p>
+
+<pre><code>sudo apt install gcc-5 g++-5
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50
 </code></pre>
 
-<p><strong>Install Bootstrap Dependencies:</strong></p>
+<h2 id="install-cuda">Install CUDA</h2>
 
-<pre><code>$ sudo apt-get install python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
+<p><strong>Prepare/Download CUDA installtion packages</strong></p>
+
+<p>Download the runfile installation packager from CUDA website <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=runfilelocal">legacy download</a>, download base installer (cuda_9.0.176_384.81_linux-run for Ubuntu 16.04) and four patch file(cuda_9.0.176.x_linux.run)/</p>
+
+<p><strong>Installation</strong></p>
+
+<pre><code>chmod +x cuda_9.0.176_384.81_linux-run
+sudo ./cuda_9.0.176_384.81_linux-run --override
 </code></pre>
 
-<p><strong>Install rosdep (package manager):</strong></p>
+<p>Answer following questions while installtion begin
+&gt; You are attempting to install on an unsupported configuration. Do you wish to continue? yes
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81? no  (MUST SELECT NO!!!)
+Install the CUDA 9.0 Toolkit? yes
+&hellip;&hellip;</p>
 
-<pre><code>$ sudo rosdep init
-$ rosdep update
+<p>Then you can install the cuBLAS patch file(total 4):</p>
+
+<pre><code>chmod +x cuda_9.0.176.x_linux.run
+sudo ./cuda_9.0.176.x_linux.run
 </code></pre>
 
-<p><strong>Create a catkin Workspace:</strong></p>
+<p><strong>set up symlinks for gcc</strong></p>
 
-<pre><code>$ mkdir ~/ros_catkin_ws
-$ cd ~/ros_catkin_ws
+<pre><code>sudo ln -s /usr/bin/gcc /usr/local/cuda/bin/gcc
+sudo ln -s /usr/bin/g++ /usr/local/cuda/bin/g++
 </code></pre>
 
-<p><strong>Build packages and libraries:</strong></p>
+<p><strong>set up cuda system path</strong></p>
 
-<p>I chose to install ROS-Comm for minimal installation.</p>
-
-<blockquote>
-<p>ROS-Comm: ROS package, build, and communication libraries. No GUI tools.</p>
-</blockquote>
-
-<pre><code>$ rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar &gt; kinetic-ros_comm-wet.rosinstall
-$ wstool init -j8 src kinetic-ros_comm-wet.rosinstall
+<pre><code>echo 'export PATH=/usr/local/cuda-9.0/bin:$PATH' &gt;&gt; ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc
+source ~/.bashrc
 </code></pre>
 
-<blockquote>
-<p>“-j8” is for faster processing.</p>
-</blockquote>
+<p><strong>Vefify the installation</strong></p>
 
-<p>If “wstool init” fails or is interrupted, you can resume the download by running (this step may NOT be necessary):</p>
-
-<pre><code>$ wstool update -j4 -t src
+<pre><code>cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+sudo make 
+./deviceQuery
 </code></pre>
 
-<p>Make sure all dependenices are installed:</p>
+<p>You shoud see the passed output results.</p>
 
-<pre><code>$ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+<h2 id="install-cudnn">Install cuDNN</h2>
+
+<p><strong>Download cuDNN installtion file</strong></p>
+
+<p>Download the file(cudnn-9.0-linux-x64-v7.2.1.38.tgz) from <a href="https://developer.nvidia.com/cudnn">cuDNN website</a>, please take note that you need to login as developer to start dowonload.</p>
+
+<p><strong>Install</strong></p>
+
+<pre><code>tar -xzvf cudnn-9.0-linux-x64-v7.2.1.38.tg
+sudo cp -P cuda/include/cudnn.h /usr/local/cuda-9.0/include
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-9.0/lib64/
+sudo chmod a+r /usr/local/cuda-9.0/lib64/libcudnn*
 </code></pre>
 
-<p><strong>Build ROS:</strong></p>
+<p><strong>Vefify the installation</strong></p>
 
-<pre><code>$ sudo mkdir -p /opt/ros/kinetic
-$ sudo chown pi:pi /opt/ros/kinetic
-$ ./src/catkin/bin/catkin_make_isolated -j2 --install --install-space /opt/ros/kinetic -DCMAKE_BUILD_TYPE=Release
+<pre><code>nvcc -V
 </code></pre>
 
-<p>“-j2” is used because of limited memory of Pi, default parameter is “-j4”, “-j4” may cause error.</p>
+<p>Currently, you should install CUDA 9.0 and cuDNN 7.2 successfully.</p>
 
-<p><strong>Source the new installation:</strong></p>
+<h2 id="install-tensorflow-gpu">Install Tensorflow-gpu</h2>
 
-<pre><code>$ source /opt/ros/kinetic/setup.bash
+<p>Current TF version is 1.10.1, it only support up to CUDA 9.0 if using pip installation, that&rsquo;s why I choose to install CUDA 9.0, this TF installation should be very easy in this situation.</p>
+
+<pre><code>sudo apt install python3-pip
+pip3 install tensorflow-gpu==1.10.1
 </code></pre>
 
-<p>ROS environment variables could be checked by the following command:</p>
-
-<pre><code>$ export | grep ROS
-</code></pre>
-
-<p>Now ROS should be installed successfully, remember to change swap space back to 100MB.</p>
-
-<h2 id="step-3-install-opencv">Step 3:  Install OpenCV</h2>
-
-<p>OpenCV installation should be very easy now, there are many good online guide, I won’t repeat here, I recommend to use this <a href="https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/">OpenCV installation guide done by Adrian Rosebrock</a>.</p>
-
-<p>In the above <a href="https://drive.google.com/open?id=1KMP9R-Yg3GXGDGbAxtfe_mwYa9hFUwmh">ready-to-use img file</a>, it has installed OpenCV-3.3.1 with opencv_contrib (include SIFT, SURF  and other features), OpenCV is installed in global, NOT in virtual environment as in the Adrian guide, both python2 and python3 are able to use OpenCV.</p>
-
-<p>If you don’t know how to use OpenCV in ROS, just take a look at <a href="http://wiki.ros.org/cv_bridge">cv_bridge</a> in ROS wiki.</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>Now you should install ROS and OpenCV on your Raspberry Pi successfully, but this guide is not only for the specific version of Raspberry Pi and OpenCV, you also can try with other versions.</p>
+<p>Hope this can help you.</p>
 
 			</article>
 		</section>
@@ -520,7 +530,7 @@ $ ./src/catkin/bin/catkin_make_isolated -j2 --install --install-space /opt/ros/k
 			'width=626,height=436'); return false;">
 		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
 	</div>
-	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Install ROS and OpenCV in Raspberry Pi  https:\/\/zcsd.github.io\/post\/install_ros_and_opencv_in_raspberry_pi\/','_self')">
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Install CUDA9.0 cuDNN7.2 for Tensorflow-gpu in Ubuntu 18.04  https:\/\/zcsd.github.io\/post\/install_cuda_cudnn_for_tf_in_ubuntu18-04\/','_self')">
 		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
 	</div>
 </section>
@@ -528,8 +538,8 @@ $ ./src/catkin/bin/catkin_make_isolated -j2 --install --install-space /opt/ros/k
 		<div class="ui secondary bottom attached stacked segment disqus"><div id="disqus_thread"></div>
 <script>
 	var disqus_config = function () {
-		this.page.url = 'https:\/\/zcsd.github.io\/post\/install_ros_and_opencv_in_raspberry_pi\/';
-		this.page.identifier = 'd37c85ec41f662f8c164dc1eca974515';
+		this.page.url = 'https:\/\/zcsd.github.io\/post\/install_cuda_cudnn_for_tf_in_ubuntu18-04\/';
+		this.page.identifier = 'ddcaf90328f33c226e871b31c2f682b0';
 	};
 	(function() {
    	var d = document, s = d.createElement('script');

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Zichun&#39;s Blog</title>
-    <link>https://zcsd.github.io/post/</link>
-    <description>Recent content in Posts on Zichun&#39;s Blog</description>
+    <title>Ubuntu on Zichun&#39;s Blog</title>
+    <link>https://zcsd.github.io/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Zichun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Sep 2018 18:11:28 +0800</lastBuildDate>
     
-	<atom:link href="https://zcsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zcsd.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/</guid>
       <description>Introduction This tutorial will guide you how to install CUDA and cuDNN for tensorflow-gpu using in Ubuntu 18.04, there are some online tutorials which always made some errors when I follow them to do the setup, it may be caused by new Ubuntu OS version and other version conflict, so I prepared a detailed guide to help on this.
 Firstly, you should know your development envirnment clearly, here is my pc environment and library that will be used (on 26 Sep 2018):</description>
-    </item>
-    
-    <item>
-      <title>Install ROS and OpenCV in Raspberry Pi</title>
-      <link>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</link>
-      <pubDate>Wed, 20 Dec 2017 23:15:50 +0800</pubDate>
-      
-      <guid>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</guid>
-      <description>Introduction This instruction covers the installation of ROS Kinetic (Robot Operating System) and OpenCV-3.3.1 on the Raspberry Pi 2 or 3 with Raspbian Stretch.
-I have prepared an img file (made in Dec 19 2017) that compiled ROS and OpenCV, you can download it here, file size is around 4GB in Google Drive. You can download ,unzip and burn it to your SD card (at least 16GB) if you don’t care the installation details.</description>
     </item>
     
   </channel>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zcsd.github.io/post/install_cuda_cudnn_for_tf_in_ubuntu18-04/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zcsd.github.io/post/install_ros_and_opencv_in_raspberry_pi/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
   </url>
@@ -21,13 +26,19 @@
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/linux/</loc>
-    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <loc>https://zcsd.github.io/tags/cuda/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/categories/opencv/</loc>
+    <loc>https://zcsd.github.io/categories/cuda/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zcsd.github.io/tags/linux/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -39,7 +50,19 @@
   </url>
   
   <url>
+    <loc>https://zcsd.github.io/categories/opencv/</loc>
+    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zcsd.github.io/post/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zcsd.github.io/tags/ros/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -51,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/ros/</loc>
+    <loc>https://zcsd.github.io/tags/rpi/</loc>
     <lastmod>2018-07-02T23:34:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -63,20 +86,26 @@
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/rpi/</loc>
-    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <loc>https://zcsd.github.io/tags/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zcsd.github.io/tags/</loc>
-    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <loc>https://zcsd.github.io/categories/tensorflow/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zcsd.github.io/tags/ubuntu/</loc>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zcsd.github.io/</loc>
-    <lastmod>2018-07-02T23:34:05+08:00</lastmod>
+    <lastmod>2018-09-30T15:30:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
