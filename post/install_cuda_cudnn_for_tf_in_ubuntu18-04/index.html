@@ -399,7 +399,8 @@ var bodyBgSwitchIndex = 0;var gradients = [
 <h2 id="intall-nvidia-gpu-driver">Intall NVIDIA GPU driver</h2>
 
 <blockquote>
-<p>Note: For CUDA 9.0, it require at least nvidia-384 driver, so if your current driver version is equal to or newer than 384, you have no need to upgrade or reinstall the driver, can skip the following driver installation steps.</p>
+<p>Note: For CUDA 9.0, it require at least nvidia-384 driver, so if your current driver version is equal to or newer than 384, you have no need to upgrade or reinstall the driver, can skip the
+following driver installation steps.</p>
 </blockquote>
 
 <pre><code>sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -411,7 +412,7 @@ sudo apt install nvidia-384 nvidia-384-dev
 
 <p><strong>Install dependent library</strong></p>
 
-<pre><code>sudo apt install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+<pre><code>sudo apt install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 </code></pre>
 
 <p><strong>Downgrade gcc version</strong></p>
@@ -435,11 +436,13 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50
 sudo ./cuda_9.0.176_384.81_linux-run --override
 </code></pre>
 
-<p>Answer following questions while installtion begin
-&gt; You are attempting to install on an unsupported configuration. Do you wish to continue? yes
+<p>Answer following questions while installtion begin</p>
+
+<pre><code>You are attempting to install on an unsupported configuration. Do you wish to continue? yes
 Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81? no  (MUST SELECT NO!!!)
 Install the CUDA 9.0 Toolkit? yes
-&hellip;&hellip;</p>
+...... yes
+</code></pre>
 
 <p>Then you can install the cuBLAS patch file(total 4):</p>
 
