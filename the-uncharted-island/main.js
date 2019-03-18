@@ -71,7 +71,7 @@ window.boot = function () {
         cc.view.enableRetina(true);
         cc.view.resizeWithBrowserSize(true);
 
-        if (!true && !false) {
+        if (!false && !false) {
             if (cc.sys.isBrowser) {
                 setLoadingDisplay();
             }
