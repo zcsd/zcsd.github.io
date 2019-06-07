@@ -45,6 +45,18 @@ window.boot = function () {
                 }
             }
         }
+
+        var subpackages = settings.subpackages;
+        for (var subId in subpackages) {
+            var uuidArray = subpackages[subId].uuids;
+            if (uuidArray) {
+                for (var k = 0, l = uuidArray.length; k < l; k++) {
+                    if (typeof uuidArray[k] === 'number') {
+                        uuidArray[k] = uuids[uuidArray[k]];
+                    }
+                }
+            }
+        }
     }
 
     function setLoadingDisplay () {
@@ -186,6 +198,7 @@ if (false) {
     window.boot();
 }
 else if (window.jsb) {
+
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
         require('src/settings.js');
@@ -197,5 +210,7 @@ else if (window.jsb) {
         require('src/cocos2d-jsb.js');
         require('jsb-adapter/jsb-engine.js');
     }
+
+    cc.macro.CLEANUP_IMAGE_CACHE = true;
     window.boot();
 }
